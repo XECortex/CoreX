@@ -1,6 +1,6 @@
-### TODO
+# TODO
 ## Features
-# Mechanics
+### Mechanics
         - Create light sources out of any block using glowstone
         - XP fly / jump boost
         - Fast travel
@@ -14,7 +14,7 @@
         - Allow crying obsidian in nether portals
         - New, realistic adventure gamemode
 
-# Interface
+### Interface
         - Join and quit messages
         - Server list message of the day (with packet modification)
         - Bossbar compass
@@ -22,11 +22,11 @@
         - Show health of players and mobs above their head
         - Ping players on low item durability
 
-# Combat
+### Combat
         - Combat holograms
         - Blood particles
 
-#Utils
+### Utils
         - AFK
         - Nicknames
         - “Better Sleeping“
@@ -35,11 +35,11 @@
 ## Code
 
 
-### Done
-# Chat
+# Done
+### Chat
 - Chat formatting
 - Allow colors
 - Highlight URLs
 
-# Interface
+### Interface
 - Join and quit messages

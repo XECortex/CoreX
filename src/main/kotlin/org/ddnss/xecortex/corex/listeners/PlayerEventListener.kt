@@ -4,6 +4,7 @@ import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.entity.EntityDamageEvent
 import org.bukkit.event.player.AsyncPlayerChatEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerKickEvent
@@ -11,7 +12,7 @@ import org.bukkit.event.player.PlayerQuitEvent
 import org.ddnss.xecortex.corex.Main
 import org.ddnss.xecortex.corex.util.InvalidConfigException
 
-class PlayerListener(val plugin: Main) : Listener {
+class PlayerEventListener(private val plugin: Main) : Listener {
     @EventHandler
     fun onPlayerChat(event: AsyncPlayerChatEvent) {
         if (event.isCancelled)

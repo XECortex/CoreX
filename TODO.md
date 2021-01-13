@@ -24,7 +24,6 @@
 
 ### Combat
 - Combat holograms
-- Blood particles
 
 ### Utils
 - AFK
@@ -44,3 +43,6 @@
 
 ### Interface
 - Join and quit messages
+
+### Combat
+- Blood particles

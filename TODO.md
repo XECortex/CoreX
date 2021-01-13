@@ -15,9 +15,7 @@
 - New, realistic adventure gamemode
 
 ### Interface
-- Join and quit messages
 - Server list message of the day (with packet modification)
-- Bossbar compass
 - Scoreboard
 - Show health of players and mobs above their head
 - Ping players on low item durability
@@ -28,11 +26,15 @@
 ### Utils
 - AFK
 - Nicknames
-- “Better Sleeping“
+- “Better Sleeping“ (not longer needed as mojang adds the sleepPercentage-gamerule to minecraft)
 - Allow colors on signs
 
 ## Code
-
+### Fixme
+- Use BossBarCompass
+#### PlayerEventListener.kt
+- “&“-chars in URLs would be translated to colors
+- Get a custom kick message from the config
 
 # Done
 ## Features
@@ -43,6 +45,7 @@
 
 ### Interface
 - Join and quit messages
+- Bossbar compass
 
 ### Combat
 - Blood particles

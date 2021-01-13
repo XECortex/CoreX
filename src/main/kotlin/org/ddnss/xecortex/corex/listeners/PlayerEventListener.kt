@@ -56,7 +56,8 @@ class PlayerEventListener(private val plugin: Main) : Listener {
     fun onPlayerKick(event: PlayerKickEvent) {
         event.leaveMessage = ""
 
+        // TODO:
         var leaveMessage = "§7${event.player.displayName} §cgot kicked from the server.\n§cReason: §4${event.reason}"
-        Bukkit.broadcastMessage("TODO:")
+        Bukkit.broadcastMessage(leaveMessage)
     }
 }

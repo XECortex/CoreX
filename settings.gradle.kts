@@ -1,1 +1,1 @@
-rootProject.name = "corex"
+rootProject.name = "CoreX"

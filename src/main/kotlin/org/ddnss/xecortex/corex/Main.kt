@@ -5,7 +5,6 @@ import org.ddnss.xecortex.corex.listeners.PlayerListener
 
 class Main : JavaPlugin() {
     override fun onEnable() {
-        // Save the configuration file to the disk
         saveDefaultConfig();
 
         // Register event listeners

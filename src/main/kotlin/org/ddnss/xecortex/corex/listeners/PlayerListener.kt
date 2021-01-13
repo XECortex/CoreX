@@ -1,15 +1,17 @@
 package org.ddnss.xecortex.corex.listeners
 
+import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.AsyncPlayerChatEvent
 import org.bukkit.event.player.PlayerJoinEvent
+import org.bukkit.event.player.PlayerKickEvent
+import org.bukkit.event.player.PlayerQuitEvent
 import org.ddnss.xecortex.corex.Main
 import org.ddnss.xecortex.corex.util.InvalidConfigException
 
 class PlayerListener(val plugin: Main) : Listener {
-    // Player chat event
     @EventHandler
     fun onPlayerChat(event: AsyncPlayerChatEvent) {
         if (event.isCancelled)
@@ -28,17 +30,28 @@ class PlayerListener(val plugin: Main) : Listener {
 
         event.message = message
 
-        // Set the format of the message
         if (plugin.config.getBoolean("chat.format-chat"))
                 event.format = plugin.config.getString("chat.message-format") ?: throw InvalidConfigException("chat.message-format")
     }
 
-    // Player join, quit, kick and ban event
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
         val player = event.player
 
-        // Modify the join message
-        event.joinMessage = plugin.config.getString("messages.join-message") ?: throw InvalidConfigException("messages.join-message")
+        event.joinMessage = String.format(plugin.config.getString("messages.join-message") ?: throw InvalidConfigException("messages.join-message"), player.displayName)
+    }
+
+    @EventHandler
+    fun onPlayerQuit(event: PlayerQuitEvent) {
+        val player = event.player
+
+        if (!(event.reason.equals(QuitReason.KICK) || event.reason.equals(QuitReason.BAN)))
+        event.quitMessage = String.format(plugin.config.getString("messages.quit-message") ?: throw InvalidConfigException("messages.quit-message"), player.displayName)
+    }
+
+    @EventHandler
+    fun onPlayerKick(event: PlayerKickEvent) {
+        event.leaveMessage = ""
+        Bukkit.broadcastMessage("TODO:")
     }
 }

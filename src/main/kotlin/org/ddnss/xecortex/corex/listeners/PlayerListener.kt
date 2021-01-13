@@ -45,13 +45,17 @@ class PlayerListener(val plugin: Main) : Listener {
     fun onPlayerQuit(event: PlayerQuitEvent) {
         val player = event.player
 
-        if (!(event.reason.equals(QuitReason.KICK) || event.reason.equals(QuitReason.BAN)))
-        event.quitMessage = String.format(plugin.config.getString("messages.quit-message") ?: throw InvalidConfigException("messages.quit-message"), player.displayName)
+        if (event.reason != PlayerQuitEvent.QuitReason.KICKED)
+            event.quitMessage = String.format(plugin.config.getString("messages.quit-message") ?: throw InvalidConfigException("messages.quit-message"), player.displayName)
+        else
+            event.quitMessage = ""
     }
 
     @EventHandler
     fun onPlayerKick(event: PlayerKickEvent) {
         event.leaveMessage = ""
+
+        var leaveMessage = "§7${event.player.displayName} §cgot kicked from the server.\n§cReason: §4${event.reason}"
         Bukkit.broadcastMessage("TODO:")
     }
 }

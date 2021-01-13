@@ -7,8 +7,8 @@ api-version: 1.16
 softdepend: [PlaceholderAPI, HolographicDisplays, ProtocolLib]
 permissions:
   corex.chat.allow-colors:
-    description: Allow the player to use color codes in the chat
+    description: "Allow the player to use color codes in the chat"
     default: op
   corex.chat.highlight-urls:
-    description: Detect and hightlight URLs that the player sends into the chat
+    description: "Detect and highlight URLs that the player sends into the chat"
     default: op

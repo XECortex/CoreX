@@ -3,4 +3,4 @@ chat:
   message-format: "§8▎ §7%1$s §8» §r%2$s"
 messages:
   join-message: "§a▎ §7%1$s §fjoined the server"
-  quit-message: "§4▎ §7%2$s §fleft the server"
+  quit-message: "§4▎ §7%1$s §fleft the server"
